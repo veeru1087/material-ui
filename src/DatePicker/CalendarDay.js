@@ -24,7 +24,7 @@ const styles = {
   },
 };
 
-class CalendarDate extends Component {
+class CalendarDay extends Component {
   static propTypes = {
     DateTimeFormat: PropTypes.func.isRequired,
     autoOk: PropTypes.bool,
@@ -108,4 +108,4 @@ class CalendarDate extends Component {
   }
 }
 
-export default CalendarDate;
+export default CalendarDay;
