@@ -3,7 +3,7 @@ import React from 'react';
 import {shallow} from 'enzyme';
 import {assert} from 'chai';
 import Calendar from './Calendar';
-import CalendarMonth from './CalendarMonth';
+import CalendarDay from './CalendarDay';
 import CalendarYear from './CalendarYear';
 import DateDisplay from './DateDisplay';
 import {addMonths, dateTimeFormat} from './dateUtils';
@@ -211,13 +211,13 @@ describe('<Calendar />', () => {
       assert.strictEqual(wrapper.props().style.width, 479, 'should allow space for date display');
     });
 
-    it('should be hidden when hideCalendarDate is set', () => {
+    it('should be hidden when hideCalendarDay is set', () => {
       const wrapper = shallowWithContext(
         <Calendar
           DateTimeFormat={dateTimeFormat}
           locale="en-US"
           mode="landscape"
-          hideCalendarDate={true}
+          hideCalendarDay={true}
         />
       );
 
@@ -235,7 +235,7 @@ describe('<Calendar />', () => {
         />
       );
 
-      assert.strictEqual(wrapper.find(CalendarMonth).length, 1, 'should have the calendar month select');
+      assert.strictEqual(wrapper.find(CalendarDay).length, 1, 'should have the calendar month select');
     });
 
     it('should display the year selection view when openToYearSelection is true', () => {
